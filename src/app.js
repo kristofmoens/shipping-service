@@ -13,7 +13,7 @@ app.use(log.logNetwork);
 app.get('/*shipping', (request, response) => {
   let ctrl = new ShippingController()
   // Set the minimum logging level (Levels: error, warn, info, verbose, debug, silly)
-    req.logger.info("Hello watcher, i'm watching you!");
+    request.logger.info("Hello watcher, i'm watching you!");
 
   ctrl
     .getItemShipping({id: request.query.itemId, type: request.query.type})
