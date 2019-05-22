@@ -9,7 +9,7 @@ app.get('/*shipping', (request, response) => {
   ctrl
     .getItemShipping({id: request.query.itemId, type: request.query.type})
     .then(amount => {
-      response.send({ itemId: request.query.itemId, priceUSD: amount })
+      response.send({message:'Shipping the good stuff (by Bezos)', itemId: request.query.itemId, priceUSD: amount })
     })
     .catch(error => {
       response.status(500).send({ error: error.message })
